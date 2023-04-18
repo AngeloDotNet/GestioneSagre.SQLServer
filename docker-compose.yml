@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  NOME-PROGETTO:
+    container_name: NOME-PROGETTO
+    restart: always
+    build:
+      context: .
+      dockerfile: src/NOME-PROGETTO/Dockerfile
+    networks:
+      - lan-network
+
+networks:
+  lan-network:
+    external:
+      name: docker-net

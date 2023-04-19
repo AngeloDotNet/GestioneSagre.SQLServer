@@ -1,22 +1,9 @@
 version: '3.7'
 
 services:
-  sqlserver:
-    image: angelo87dock/gestionesagre-sqlserver:1.0
+  database:
     container_name: sqlserver
-    restart: "always"
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=CHANGE-ME
-      - MSSQL_PID=Express
-    volumes:
-      - /docker/storage-sqlserver/data:/var/opt/mssql/data
+    restart: always
+    build: ./src/GestioneSagre.SQLServer/
     ports:
       - 1433:1433
-    networks:
-      - lan-network
-              
-  networks:
-    lan-network:
-      external:
-        name: docker-net

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2022-CU4-ubuntu-20.04
+FROM mcr.microsoft.com/mssql/server:2022-latest-ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
